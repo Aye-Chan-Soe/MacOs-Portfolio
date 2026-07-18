@@ -20,7 +20,7 @@ const FONT_WEIGHTS = {
   title: { min: 400, max: 900, default: 400 },
 };
 
-const setupTextHover = (container, type) => {
+const setupTextHover = (container, type, contextSafe) => {
   if (!container) return;
 
   const letters = container.querySelectorAll("span");
@@ -34,7 +34,7 @@ const setupTextHover = (container, type) => {
     });
   };
 
-  const handleMouseMove = (e) => {
+  const handleMouseMove = contextSafe((e) => {
     const { left } = container.getBoundingClientRect();
     const mouseX = e.clientX - left;
 
@@ -45,10 +45,11 @@ const setupTextHover = (container, type) => {
 
       animateLetter(letter, min + (max - min) * intensity);
     });
-  };
+  });
 
-  const handleMouseLeave = () =>
-    letters.forEach((letter) => animateLetter(letter, base, 0.3));
+  const handleMouseLeave = contextSafe(() =>
+    letters.forEach((letter) => animateLetter(letter, base, 0.3)),
+  );
 
   container.addEventListener("mousemove", handleMouseMove);
   container.addEventListener("mouseleave", handleMouseLeave);
@@ -64,9 +65,13 @@ const Welcome = () => {
   const titleRef = useRef(null);
   const subTitleRef = useRef(null);
 
-  useGSAP(() => {
-    const titleCleanup = setupTextHover(titleRef.current, "title");
-    const subtitleCleanup = setupTextHover(subTitleRef.current, "subtitle");
+  useGSAP((context, contextSafe) => {
+    const titleCleanup = setupTextHover(titleRef.current, "title", contextSafe);
+    const subtitleCleanup = setupTextHover(
+      subTitleRef.current,
+      "subtitle",
+      contextSafe,
+    );
 
     return () => {
       subtitleCleanup();
@@ -88,7 +93,7 @@ const Welcome = () => {
       </h1>
 
       <div className="small-screen">
-        <p>This Portfolio is designed for desktop/laptop screens only</p>
+        <p>This Portfolio is designed for desktop/tablet screens only</p>
       </div>
     </section>
   );
