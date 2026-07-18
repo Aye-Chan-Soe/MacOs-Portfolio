@@ -60,20 +60,18 @@ const Dock = () => {
   const toogleApp = (app) => {
     if (!app.canOpen) return;
 
-    const window = windows[app.id];
+    const appWindow = windows[app.id];
 
-    if (!window) {
+    if (!appWindow) {
       console.error(`Window not found for app: ${app.id}`);
       return;
     }
 
-    if (window.isOpen) {
+    if (appWindow.isOpen) {
       closeWindow(app.id);
     } else {
       openWindow(app.id);
     }
-
-    console.log(windows);
   };
 
   return (
