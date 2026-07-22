@@ -11,7 +11,6 @@ pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   import.meta.url,
 ).toString();
 
-// eslint-disable-next-line react-refresh/only-export-components
 const Resume = () => {
   return (
     <>
@@ -35,6 +34,6 @@ const Resume = () => {
   );
 };
 
-const resumeWindow = WindowWrapper(Resume, "resume");
+const ResumeWindow = WindowWrapper(Resume, "resume");
 
-export default resumeWindow;
+export default ResumeWindow;

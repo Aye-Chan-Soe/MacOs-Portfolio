@@ -13,7 +13,6 @@ import {
   ShieldHalf,
 } from "lucide-react";
 
-// eslint-disable-next-line react-refresh/only-export-components
 const Safari = () => {
   return (
     <>
@@ -71,6 +70,6 @@ const Safari = () => {
   );
 };
 
-const safariWindow = WindowWrapper(Safari, "safari");
+const SafariWindow = WindowWrapper(Safari, "safari");
 
-export default safariWindow;
+export default SafariWindow;

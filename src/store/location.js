@@ -1,35 +1,20 @@
-import { INITIAL_Z_INDEX, WINDOW_CONFIG } from "@constants";
 import { create } from "zustand";
 import { immer } from "zustand/middleware/immer";
+import { locations } from "@constants/index";
+
+const DEFAULT_LOCATION = locations.work;
 
 const useLocationStore = create(
   immer((set) => ({
-    windows: WINDOW_CONFIG,
-    nextZIndex: INITIAL_Z_INDEX + 1,
-
-    openWindow: (windowKey, date, data = null) =>
+    activeLocation: DEFAULT_LOCATION,
+    setActiveLocation: (location = null) =>
       set((state) => {
-        const win = state.windows[windowKey];
-        if (!win) return;
-        win.isOpen = true;
-        win.zIndex = state.nextZIndex;
-        win.data = data ?? win.data;
-        state.nextZIndex++;
+        state.activeLocation = location;
       }),
 
-    closeWindow: (windowKey) =>
+    resetActiveLocation: () =>
       set((state) => {
-        const win = state.windows[windowKey];
-        if (!win) return;
-        win.isOpen = false;
-        win.zIndex = INITIAL_Z_INDEX;
-        win.data = null;
-      }),
-
-    focusWindow: (windowKey) =>
-      set((state) => {
-        const win = state.windows[windowKey];
-        win.zIndex = state.nextZIndex++;
+        state.activeLocation = DEFAULT_LOCATION;
       }),
   })),
 );
