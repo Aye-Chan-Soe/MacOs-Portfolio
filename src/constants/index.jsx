@@ -158,6 +158,7 @@ const socials = [
   },
 ];
 
+
 const photosLinks = [
   {
     id: 1,
@@ -502,6 +503,8 @@ const WINDOW_CONFIG = {
   terminal: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   txtfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   imgfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
+  email:{isOpen: false, zIndex: INITIAL_Z_INDEX, data: null}
+
 };
 
 export { INITIAL_Z_INDEX, WINDOW_CONFIG };
