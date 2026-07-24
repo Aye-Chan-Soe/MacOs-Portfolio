@@ -12,7 +12,7 @@ const Home = () => {
     const {setActiveLocation} = useLocationStore()
 
     useGSAP(()=> {
-        Draggable.create(".folder",)
+        Draggable.create(".folder", )
     },[])
 
     const handleOpenProjectFinder = (project) => {
