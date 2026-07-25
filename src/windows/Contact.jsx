@@ -1,8 +1,10 @@
 import { WindowControls } from "@components";
 import { socials } from "@constants";
 import WindowWrapper from "@hoc/WindowWrapper";
+import useWindowStore from "@store/window";
 
 const Contact = () => {
+  const openWindow = useWindowStore((state) => state.openWindow);
   return (
     <>
       <div id="window-header">
@@ -26,17 +28,26 @@ const Contact = () => {
         <ul className="mt-10 mb-5">
           {socials.map(({ id, bg, link, icon, text }) => (
             <li key={id} style={{ backgroundColor: bg }}>
-              <a
-                href={link}
-                target={link.startsWith("mailto:") ? undefined : "_blank"}
-                rel={
-                  link.startsWith("mailto:") ? undefined : "noopener noreferrer"
-                }
-                title={text}
-              >
-                <img src={icon} alt={text} className="size-5" />
-                <p>{text}</p>
-              </a>
+              {text == "Email" ? (
+                <button
+                  type="button"
+                  onClick={() => openWindow("email")}
+                  title="Send me an email"
+                >
+                  <img src={icon} alt="email" className="size-5" />
+                  <p className="pt-5 ">{text}</p>
+                </button>
+              ) : (
+                <a
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title={text}
+                >
+                  <img src={icon} alt={text} className="size-5" />
+                  <p>{text}</p>
+                </a>
+              )}
             </li>
           ))}
         </ul>
