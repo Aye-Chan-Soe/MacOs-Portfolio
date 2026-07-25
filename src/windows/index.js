@@ -4,7 +4,8 @@ import Resume from "./Resume"
 import Finder from "./Finder"
 import Text from "./Text"
 import Image from "./Image"
+import Gallery from "./Gallery"
 import Contact from "./Contact"
 import Email from "./Email"
 
-export {Terminal, Safari, Resume, Finder, Text, Image, Contact, Email}
+export {Terminal, Safari, Resume, Finder, Text, Image, Gallery, Contact, Email}
