@@ -6,15 +6,19 @@ import { useState } from "react";
 
 const Email = () => {
   const [form, setForm] = useState({ subject: "", reply_to: "", message: "" });
-  const [status, setStatus] = useState("");
+  const [status, setStatus] = useState({ type: "idle", message: "" });
+
+  const isSending = status.type === "sending";
 
   const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    setForm((currentForm) => ({ ...currentForm, [e.target.name]: e.target.value }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setStatus("Sending...");
+    if (isSending) return;
+
+    setStatus({ type: "sending", message: "Sending..." });
 
     try {
       await emailjs.send(
@@ -23,12 +27,16 @@ const Email = () => {
         form,
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
       );
-      setStatus("Email sent successfully!");
+      setStatus({ type: "success", message: "Email sent successfully!" });
       setForm({ subject: "", reply_to: "", message: "" });
     } catch {
-      setStatus("Failed to send email. Please try again later.");
+      setStatus({
+        type: "error",
+        message: "Failed to send email. Please try again later.",
+      });
     }
   };
+
   return (
     <>
       <div id="window-header">
@@ -49,6 +57,7 @@ const Email = () => {
             placeholder="Your email"
             required
             className="w-full rounded border p-2"
+            disabled={isSending}
           />
           <input
             name="subject"
@@ -57,6 +66,7 @@ const Email = () => {
             placeholder="Subject"
             required
             className="w-full rounded border p-2"
+            disabled={isSending}
           />
 
           <textarea
@@ -67,14 +77,20 @@ const Email = () => {
             required
             rows="6"
             className="w-full rounded border p-2"
+            disabled={isSending}
           />
           <button
             type="submit"
             className="rounded bg-blue-500 px-4 py-2 text-white"
+            disabled={isSending}
           >
-            Send
+            {isSending ? "Sending..." : "Send"}
           </button>
-          {status && <p>{status}</p>}
+          {status.message && (
+            <p role="status" aria-live="polite" aria-atomic="true">
+              {status.message}
+            </p>
+          )}
         </form>
       </div>
     </>
