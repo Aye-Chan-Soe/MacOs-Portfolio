@@ -14,11 +14,11 @@ const Contact = () => {
       <div className="p-5 space-y-5">
         <div className="flex">
           <img
-            src="/images/adrian.jpg"
+            src="/images/ayechansoe.jpg"
             alt="Aye-Chan-Soe"
-            className="w-30 h-30 rounded-4xl ml-3 "
+            className="w-40 h-50 rounded-4xl ml-3 "
           />
-          <div className="pl-10 space-y-2">
+          <div className="pl-10 space-y-2 mt-10">
             <h3>Let's Connect</h3>
             <p>
               Got an idea? A bug to squash? Or just wanna talk tech? I'm in.
