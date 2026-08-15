@@ -11,32 +11,43 @@ const WindowWrapper = (Component, windowKey) => {
     const { isOpen, zIndex } = windows[windowKey];
     const ref = useRef(null);
 
-    useGSAP(()=>{
-        const el = ref.current;
-        if(!el || !isOpen) return null;
+    useGSAP(() => {
+      const el = ref.current;
+      if (!el || !isOpen) return null;
 
-        el.style.display = 'block';
-        gsap.fromTo(el, {scale: 0.8, opacity: 0, y: 40},
-            {scale: 1, opacity: 1, y: 0, duration: 0.2, ease: "power3.out"}
-        )
+      el.style.display = "block";
+      gsap.fromTo(
+        el,
+        { scale: 0.8, opacity: 0, y: 40 },
+        { scale: 1, opacity: 1, y: 0, duration: 0.2, ease: "power3.out" },
+      );
     }, [isOpen]);
 
-    useGSAP(()=>{
-        const el =ref.current;
-        if(!el) return;
+    useGSAP(() => {
+      const el = ref.current;
+      if (!el) return;
 
-       const [instance] =  Draggable.create(el, {
-        trigger: el.querySelector("#window-header"),
-        onPress: ()=> focusWindow(windowKey)});
+      const header = el.querySelector("#window-header");
+      const opts = {
+        onPress: () => focusWindow(windowKey),
+      };
 
-       return () => instance.kill();
-    },[])
+      if (windowKey === "email" && header) {
+        opts.trigger = header;
+      } else {
+        opts.trigger = el;
+      }
 
-    useLayoutEffect(()=>{
-        const el = ref.current;
-        if(!el) return;
-        el.style.display = isOpen ? 'block' : 'none';
-    },[isOpen])
+      const [instance] = Draggable.create(el, opts);
+
+      return () => instance.kill();
+    }, []);
+
+    useLayoutEffect(() => {
+      const el = ref.current;
+      if (!el) return;
+      el.style.display = isOpen ? "block" : "none";
+    }, [isOpen]);
 
     return (
       <section id={windowKey} ref={ref} style={{ zIndex }} className="absolute">

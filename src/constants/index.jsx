@@ -75,30 +75,7 @@ const dockApps = [
   },
 ];
 
-const blogPosts = [
-  {
-    id: 1,
-    date: "Sep 2, 2025",
-    title:
-      "TypeScript Explained: What It Is, Why It Matters, and How to Master It",
-    image: "/images/blog1.png",
-    link: "https://jsmastery.com/blog/typescript-explained-what-it-is-why-it-matters-and-how-to-master-it",
-  },
-  {
-    id: 2,
-    date: "Aug 28, 2025",
-    title: "The Ultimate Guide to Mastering Three.js for 3D Development",
-    image: "/images/blog2.png",
-    link: "https://jsmastery.com/blog/the-ultimate-guide-to-mastering-three-js-for-3d-development",
-  },
-  {
-    id: 3,
-    date: "Aug 15, 2025",
-    title: "The Ultimate Guide to Mastering GSAP Animations",
-    image: "/images/blog3.png",
-    link: "https://jsmastery.com/blog/the-ultimate-guide-to-mastering-gsap-animations",
-  },
-];
+const blogPosts = [];
 
 const techStack = [
   {
@@ -154,7 +131,6 @@ const socials = [
   },
 ];
 
-
 const photosLinks = [
   {
     id: 1,
@@ -196,7 +172,6 @@ const gallery = [
     id: 3,
     img: "/images/gal3.jpg",
   },
-  
 ];
 
 export {
@@ -220,15 +195,15 @@ const WORK_LOCATION = {
     // ▶ Project 1
     {
       id: 5,
-      name: "Nike Ecommerce Website Application",
+      name: "Attendance Management System",
       icon: "/images/folder.png",
       kind: "folder",
       position: "top-10 left-5", // icon position inside Finder
-      windowPosition: "top-[5vh] left-5", // optional: Finder window position
+      windowPosition: "top-[5vh] left-1", // optional: Finder window position
       children: [
         {
           id: 1,
-          name: "Nike Project.txt",
+          name: "attendance-management-system.txt",
           icon: "/images/txt.png",
           kind: "file",
           fileType: "txt",
@@ -242,20 +217,20 @@ const WORK_LOCATION = {
         },
         {
           id: 2,
-          name: "nike.com",
+          name: "attendance-management-system.com",
           icon: "/images/safari.png",
           kind: "file",
           fileType: "url",
           href: "https://youtu.be/fZdTYswuZjU?si=Awjl-pIst9e09_UU",
-          position: "top-4 left-28",
+          position: "top-4 left-30",
         },
         {
           id: 4,
-          name: "nike.png",
+          name: "attendance-management-system.png",
           icon: "/images/image.png",
           kind: "file",
           fileType: "img",
-          position: "top-4 left-48",
+          position: "top-4 left-58",
           imageUrl: "/images/project-1.png",
         },
         {
@@ -265,7 +240,7 @@ const WORK_LOCATION = {
           kind: "file",
           fileType: "fig",
           href: "https://google.com",
-          position: "top-4 left-68",
+          position: "top-4 left-80",
         },
       ],
     },
@@ -273,15 +248,15 @@ const WORK_LOCATION = {
     // ▶ Project 2
     {
       id: 6,
-      name: "AI Resume Analyzer",
+      name: "Event Ticketing System",
       icon: "/images/folder.png",
       kind: "folder",
       position: "top-10 left-80",
-      windowPosition: "top-[20vh] left-7",
+      windowPosition: "top-[20vh] left-1",
       children: [
         {
           id: 1,
-          name: "AI Resume Analyzer Project.txt",
+          name: "event-ticketing-system.txt",
           icon: "/images/txt.png",
           kind: "file",
           fileType: "txt",
@@ -295,12 +270,12 @@ const WORK_LOCATION = {
         },
         {
           id: 2,
-          name: "ai-resume-analyzer.com",
+          name: "event-ticketing-system.com",
           icon: "/images/safari.png",
           kind: "file",
           fileType: "url",
           href: "https://youtu.be/iYOz165wGkQ?si=R1hs8Legl200m0Cl",
-          position: "top-4 left-30",
+          position: "top-4 left-32",
         },
         {
           id: 4,
@@ -308,7 +283,7 @@ const WORK_LOCATION = {
           icon: "/images/image.png",
           kind: "file",
           fileType: "img",
-          position: "top-4 left-55",
+          position: "top-4 left-58",
           imageUrl: "/images/project-2.png",
         },
         {
@@ -326,29 +301,29 @@ const WORK_LOCATION = {
     // ▶ Project 3
     {
       id: 7,
-      name: "Food Delivery App",
+      name: "MacOs-Portfolio",
       icon: "/images/folder.png",
       kind: "folder",
       position: "top-10 left-45",
-      windowPosition: "top-[33vh] left-7",
+      windowPosition: "top-[33vh] left-6",
       children: [
         {
           id: 1,
-          name: "Food Delivery App Project.txt",
+          name: "MacOs-Portfolio.txt",
           icon: "/images/txt.png",
           kind: "file",
           fileType: "txt",
           position: "top-4 left-4",
           description: [
-            "Our Food Delivery App is a fast and convenient way to order meals from your favorite restaurants.",
-            "Instead of making calls or waiting in line, you can browse menus, customize orders, and track deliveries in real time.",
-            "Think of it like having your favorite restaurants in your pocket—ready to deliver anytime, anywhere.",
-            "It’s built with React Native, so it works smoothly on both iOS and Android with a clean, modern design.",
+            "My macOS-Themed Desktop Portfolio is an interactive, web-based operating system designed to showcase my software projects and engineering background within a dynamic desktop interface.",
+            "Instead of scrolling through a standard static web page, visitors can open draggable windows, launch dedicated apps like Finder or Terminal, and manage active tasks using a modern macOS-inspired dock.",
+            "Think of it like stepping right onto my personal desktop—where exploring a developer portfolio feels like operating a sleek, responsive computer environment.",
+            "It’s built with React, Vite, Zustand, and GSAP, delivering precise multi-window state management, smooth dragging physics, and a modular architecture.",
           ],
         },
         {
           id: 2,
-          name: "food-delivery-app.com",
+          name: "macos-portfolio.com",
           icon: "/images/safari.png",
           kind: "file",
           fileType: "url",
@@ -357,21 +332,12 @@ const WORK_LOCATION = {
         },
         {
           id: 4,
-          name: "food-delivery-app.png",
+          name: "macos-portfolio.png",
           icon: "/images/image.png",
           kind: "file",
           fileType: "img",
           position: "top-4 left-65",
           imageUrl: "/images/project-3.png",
-        },
-        {
-          id: 5,
-          name: "Design.fig",
-          icon: "/images/plain.png",
-          kind: "file",
-          fileType: "fig",
-          href: "https://google.com",
-          position: "top-4 left-95",
         },
       ],
     },
@@ -444,8 +410,6 @@ const RESUME_LOCATION = {
       icon: "/images/pdf.png",
       kind: "file",
       fileType: "pdf",
-      // you can add `href` if you want to open a hosted resume
-      // href: "/your/resume/path.pdf",
     },
   ],
 };
@@ -456,26 +420,7 @@ const TRASH_LOCATION = {
   name: "Trash",
   icon: "/icons/trash.svg",
   kind: "folder",
-  children: [
-    {
-      id: 1,
-      name: "trash1.png",
-      icon: "/images/image.png",
-      kind: "file",
-      fileType: "img",
-      position: "top-10 left-10",
-      imageUrl: "/images/trash-1.png",
-    },
-    {
-      id: 2,
-      name: "trash2.png",
-      icon: "/images/image.png",
-      kind: "file",
-      fileType: "img",
-      position: "top-40 left-80",
-      imageUrl: "/images/trash-2.png",
-    },
-  ],
+  children: [],
 };
 
 export const locations = {
@@ -496,8 +441,7 @@ const WINDOW_CONFIG = {
   terminal: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   txtfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   imgfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
-  email:{isOpen: false, zIndex: INITIAL_Z_INDEX, data: null}
-
+  email: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
 };
 
 export { INITIAL_Z_INDEX, WINDOW_CONFIG };
