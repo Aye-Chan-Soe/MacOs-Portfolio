@@ -4,7 +4,7 @@
 
 A macOS-inspired, interactive portfolio that presents projects, contact options, and a resume inside draggable desktop windows — built for rich, animated desktop/tablet presentations.
 
-- Live Demo:
+- Live Demo: <https://ayechansoe.me>
 - Repository: <https://github.com/Aye-Chan-Soe/MacOs-Portfolio>
 - Report a Bug: <ayechansoe.dev@gmail.com>
 
@@ -126,7 +126,7 @@ These keys are used by the client-side EmailJS integration in `src/windows/Email
 ## Contact & License
 
 - Author: Aye Chan Soe
-- Portfolio: <https://ayechansoe.dev>
+- Portfolio: <https://ayechansoe.me>
 - LinkedIn: <https://www.linkedin.com/in/aye-chan-soe/>
 - GitHub: <https://github.com/Aye-Chan-Soe>
 
